@@ -1,8 +1,8 @@
-"""EX02 - One Shot Wordle"""
+"""EX02 - One Shot Wordle."""
 
 __author__ = "730506662"
 
-#gather inputs
+# gather inputs
 secret_word: str = "python"
 guess: str = input("What is your 6-letter guess? ")
 sum: int = 0
@@ -13,18 +13,18 @@ YELLOW_BOX: str = "\U0001F7E8"
 result: str = "" 
 
 
-#check input len
+# check input len
 while len(guess) != len(secret_word):
-    guess = input (f"That was not {len(secret_word)} letters! Try again: ")
+    guess = input(f"That was not {len(secret_word)} letters! Try again: ")
 
 
-#checking indices
+# checking indices
 indx_var: int = 0
 
 while indx_var < len(secret_word):
     if guess[indx_var] == secret_word[indx_var]:
         result += GREEN_BOX
-    else: #index of guess word != index of secret word
+    else:  # index of guess word != index of secret word
         chr_exist: bool = False
         alt_indx: int = 0
         while not chr_exist and alt_indx < len(secret_word): 

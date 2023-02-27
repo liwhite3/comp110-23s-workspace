@@ -1,4 +1,4 @@
-"""EX03 - Structures Wordle."""
+"""EX03 - Structured Wordle."""
 
 __author__ = "730506662"
 
@@ -25,14 +25,7 @@ def emojified(guess_word: str, secret_word: str) -> str:
         if guess_word[indx_var] == secret_word[indx_var]:
             result += GREEN_BOX
         else:
-            chr_exist: bool = False
-            alt_indx: int = 0
-            while not chr_exist and alt_indx < len(secret_word):
-                if secret_word[alt_indx] == guess_word[indx_var]:
-                    chr_exist = True
-                else:
-                    alt_indx += 1
-            if chr_exist:
+            if contains_char(secret_word, guess_word[indx_var]):
                 result += YELLOW_BOX
             else:
                 result += WHITE_BOX
